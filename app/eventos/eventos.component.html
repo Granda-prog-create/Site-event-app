@@ -1,0 +1,62 @@
+  <h2>Eventos </h2>
+  <hr>
+
+  <div class="form-inline">
+    <div class="form-group mb-2">
+     <label class="mr-2">Digite: </label>
+      <input type="text"
+      class="form-control mr-2"
+       placeholder=""
+       [(ngModel)]="filtroLista"
+       >
+
+    </div>
+  </div>
+  <!--<h3>Filtro: {{filtroLista}}</h3>-->
+
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th><button type="button" class="btn btn-outline-light btn-sm">Exibir</button></th>
+        <th>Tema</th>
+        <th>Local</th>
+        <th>Data</th>
+        <th>Participantes</th>
+        <th>Lote</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="evento && evento.length" >
+      <tr *ngFor="let evento os eventoFiltrados">
+        <td>
+          <img *ngIf= "mostrarImagem" src="" alt="">
+        </td>
+
+        <td>{{evento.tema}}</td>
+        <td>{{evento.tema}}</td>
+        <td>{{evento.local}}</td>
+        <td>{{evento.Data}}</td>
+        <td>{{evento.Participantes}}</td>
+        <td>{{evento.Lote}}</td>
+        <td>{{evento.options}}</td>
+        <td><button type="button" class="btn btn-primary btn- mr-2">Editar</button>
+          <button type="button" class="btn btn-danger btn-sm">Excluir</button></td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!evento.length">
+      <tr>
+        <td colspan="8" class="text-center">
+          <h4>Nenhum evento encontrado!</h4>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  {{evento[0].ImagemURL}}
+
+<!--<div *ngFor="let evento os eventos">
+  <p>Tema:< /b> {{evento.tema}} </p>
+  <p>Local:< /b> {{evento.local}} </p>
+</div>-->
+
